@@ -12,6 +12,7 @@
     var dots = Array.prototype.slice.call(root.querySelectorAll('.dot'));
     var prev = root.querySelector('.car-prev'), next = root.querySelector('.car-next');
     var stage = root.querySelector('.stage');
+    var cap = root.querySelector('.car-cap');
     var n = phones.length, i = 0, swiped = false;
     var POS = ['pos-c', 'pos-r', 'pos-hr', 'pos-hl', 'pos-l'];
     function posClass(d) {
@@ -31,6 +32,7 @@
       dots.forEach(function (d, j) {
         if (j === i) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
       });
+      if (cap) cap.textContent = phones[i].getAttribute('data-caption') || '';
     }
     dots.forEach(function (d, j) { d.addEventListener('click', function () { show(j); }); });
     prev.addEventListener('click', function () { show(i - 1); });
