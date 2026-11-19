@@ -12,7 +12,7 @@
   }
   function state(playing) {
     btn.setAttribute('aria-pressed', playing ? 'true' : 'false');
-    btn.setAttribute('aria-label', (playing ? 'Pause' : 'Play') + ' Willowbrook');
+    btn.setAttribute('aria-label', (playing ? 'Pause' : 'Play') + ' Willowbrook excerpt');
   }
   btn.addEventListener('click', function () { if (a.paused) a.play(); else a.pause(); });
   a.addEventListener('play', function () { state(true); });
